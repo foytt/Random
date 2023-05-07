@@ -1,0 +1,136 @@
+body{
+    background-color: rgba(20, 20, 20, 1);
+    margin: 0px;
+}
+
+#menu{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item{
+    color: silver;
+    font-weight: bold;
+    font-size: clamp(3rem, 4vw, 4rem);
+    font-family: 'Arial Narrow Bold', sans-serif;
+
+    display: block;
+    text-decoration: none;
+    padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+    transition: opacity 400ms ease;
+}
+
+.grid{
+    display: grid;
+    align-items: center;
+    justify-content: right;
+    margin-left: 30%;
+    transition: opacity 800ms ease;
+    opacity: 0.9;
+}
+
+#menu-background-pattern{
+    height: 100vh;
+    width: 100vw;
+
+    background:url(Image/Başlıksız.png);
+    background-repeat: repeat;
+    background-size: 2vmin 2vmin; 
+    opacity: 0.05;
+    
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+
+    transition: opacity 800ms ease,
+    background-size 600ms ease,
+    background-position 800ms ease;
+
+}
+
+#menu-items:hover ~ #menu-background-pattern{
+    background-size: 10vmin 10vmin;
+    opacity: 0.07;
+}
+
+#menu-items:hover ~ .grid{
+    transition: opacity 800ms ease;
+    opacity: 0.2;
+
+}
+
+#menu-items{
+    margin-left: clamp(4rem, 10vw, 48rem);
+    position: relative;
+    z-index: 2;
+}
+
+#menu-items:hover > .menu-item{
+    opacity: 0.3;
+}
+
+#menu-items:hover > .menu-item:hover{
+    opacity: 1;
+    border-radius: 10px;
+    background: radial-gradient(ellipse at top, #00000000, transparent),            radial-gradient(ellipse at bottom, #23232330, transparent);
+}
+
+#menu[data-active-index="0"] > #menu-background-pattern{
+    background-position: 0% 25%;
+}
+
+#menu[data-active-index="1"] > #menu-background-pattern{
+    background-position: 0% 40%;
+}
+
+#menu[data-active-index="2"] > #menu-background-pattern{
+    background-position: 0% 55%;
+}
+
+#menu[data-active-index="3"] > #menu-background-pattern{
+    background-position: 0% 70%;
+}
+
+#menu-background-image{
+    height: 100%;
+    width: 100%;
+
+    background-image: url(https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/11/Elder-Scrolls-Online-Best-Dragonknight-Builds-Feature.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5);
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+
+    background-position: center 40%;
+    background-size: 120vmax;
+    opacity: 0.02;
+
+    transition: opacity 800ms ease,
+    background-size 800ms ease,
+    background-position 800ms ease;
+}
+
+#menu-items:hover ~ #menu-background-image{
+    background-size: 110vmax;
+    opacity: 0.1;
+}
+
+#menu[data-active-index="0"] > #menu-background-image{
+    background-position: center 45%;
+}
+
+#menu[data-active-index="1"] > #menu-background-image{
+    background-position: center 55%;
+}
+
+#menu[data-active-index="2"] > #menu-background-image{
+    background-position: center 65%;
+}
+
+#menu[data-active-index="3"] > #menu-background-image{
+    background-position: center 75%;
+}
